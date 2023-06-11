@@ -34,11 +34,13 @@ class _StartingState extends State<Starting> {
       child: AnimatedContainer(
         duration: const Duration(milliseconds: 150),
         margin: const EdgeInsets.symmetric(horizontal: 8.0),
-        height: 8.0,
+        height: 6.0,
         width: isActive ? 24.0 : 16.0,
         decoration: BoxDecoration(
-          color: isActive ? Colors.white : const Color(0xFF7B51D3),
-          borderRadius: const BorderRadius.all(Radius.circular(12)),
+          color: isActive
+              ? const Color.fromARGB(255, 108, 107, 107)
+              : const Color.fromARGB(255, 0, 0, 0),
+          borderRadius: const BorderRadius.all(Radius.circular(20)),
         ),
       ),
     );
@@ -50,19 +52,20 @@ class _StartingState extends State<Starting> {
       body: AnnotatedRegion<SystemUiOverlayStyle>(
         value: SystemUiOverlayStyle.light,
         child: Container(
-          decoration: const BoxDecoration(
-            gradient: LinearGradient(
-              begin: Alignment.topCenter,
-              end: Alignment.bottomCenter,
-              stops: [0.1, 0.4, 0.7, 0.9],
-              colors: [
-                Color(0xFF3594DD),
-                Color(0xFF4563DB),
-                Color(0xFF5036D5),
-                Color(0xFF5B16D0),
-              ],
-            ),
-          ),
+          color: const Color.fromARGB(255, 206, 205, 205),
+          // decoration: const BoxDecoration(
+          //   gradient: LinearGradient(
+          //     begin: Alignment.topCenter,
+          //     end: Alignment.bottomCenter,
+          //     stops: [0.1, 0.4, 0.7, 0.9],
+          //     colors: [
+          //       Color(0xFF3594DD),
+          //       Color(0xFF4563DB),
+          //       Color(0xFF5036D5),
+          //       Color(0xFF5B16D0),
+          //     ],
+          //   ),
+          // ),
           child: Padding(
             padding: const EdgeInsets.symmetric(vertical: 40.0),
             child: Column(
@@ -80,14 +83,14 @@ class _StartingState extends State<Starting> {
                     child: const Text(
                       'Skip',
                       style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 20.0,
-                      ),
+                          color: Colors.black,
+                          fontSize: 20.0,
+                          fontFamily: 'Inter'),
                     ),
                   ),
                 ),
                 SizedBox(
-                  height: 600.0,
+                  height: 650.0,
                   child: PageView(
                     physics: const ClampingScrollPhysics(),
                     controller: _pageController,
@@ -103,30 +106,34 @@ class _StartingState extends State<Starting> {
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: <Widget>[
-                            Center(
+                            Padding(
+                              padding: EdgeInsets.fromLTRB(100, 0, 10, 20),
+                              child: Text(
+                                'Discover',
+                                style: TextStyle(
+                                  fontSize: 24.0,
+                                  fontWeight: FontWeight.bold,
+                                  color: Colors.black,
+                                ),
+                              ),
+                            ),
+                            Text(
+                              '“Good furniture:where comfort\n meets style”',
+                              textAlign: TextAlign.center,
+                              style: TextStyle(
+                                fontSize: 20.0,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.black,
+                              ),
+                            ),
+                            SizedBox(
+                              height: 20,
+                            ),
+                            SizedBox(
                               child: Image(
                                 image: AssetImage(
-                                  'assets/images/logo.png',
+                                  'assets/images/mid.png',
                                 ),
-                                height: 300.0,
-                                width: 300.0,
-                              ),
-                            ),
-                            SizedBox(height: 30.0),
-                            Text(
-                              'Connect people\naround the world',
-                              style: TextStyle(
-                                fontSize: 24.0,
-                                fontWeight: FontWeight.bold,
-                                color: Colors.white,
-                              ),
-                            ),
-                            SizedBox(height: 15.0),
-                            Text(
-                              'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-                              style: TextStyle(
-                                fontSize: 18.0,
-                                color: Colors.white,
                               ),
                             ),
                           ],
@@ -249,17 +256,20 @@ class _StartingState extends State<Starting> {
         ),
       ),
       bottomSheet: _currentPage == _numPages - 1
-          ? Container(
-              height: 100.0,
+          ? SizedBox(
+              height: 50,
               width: double.infinity,
-              color: Colors.white,
               child: ElevatedButton(
                 onPressed: () {
-                  print('Get started');
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const OnBoarding(),
+                    ),
+                  );
                 },
                 style: ElevatedButton.styleFrom(
-                  foregroundColor: Colors.white,
-                  backgroundColor: const Color(0xFF5B16D0),
+                  backgroundColor: Colors.black,
                   elevation: 0.0,
                 ),
                 child: const Text(
