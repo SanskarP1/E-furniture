@@ -52,20 +52,24 @@ class _StartingState extends State<Starting> {
       body: AnnotatedRegion<SystemUiOverlayStyle>(
         value: SystemUiOverlayStyle.light,
         child: Container(
-          color: const Color.fromARGB(255, 206, 205, 205),
-          // decoration: const BoxDecoration(
-          //   gradient: LinearGradient(
-          //     begin: Alignment.topCenter,
-          //     end: Alignment.bottomCenter,
-          //     stops: [0.1, 0.4, 0.7, 0.9],
-          //     colors: [
-          //       Color(0xFF3594DD),
-          //       Color(0xFF4563DB),
-          //       Color(0xFF5036D5),
-          //       Color(0xFF5B16D0),
-          //     ],
-          //   ),
-          // ),
+          decoration: const BoxDecoration(
+            gradient: LinearGradient(
+              begin: Alignment.topCenter,
+              end: Alignment.bottomCenter,
+              stops: [
+                0.1,
+                0.4,
+                // 0.7,
+                // 0.9,
+              ],
+              colors: [
+                Color.fromARGB(255, 232, 231, 231),
+                Color.fromARGB(255, 198, 198, 198),
+                // Color.fromARGB(255, 148, 148, 148),
+                // Color.fromARGB(255, 123, 122, 122),
+              ],
+            ),
+          ),
           child: Padding(
             padding: const EdgeInsets.symmetric(vertical: 40.0),
             child: Column(
@@ -102,12 +106,12 @@ class _StartingState extends State<Starting> {
                     children: const <Widget>[
                       // Page 1
                       Padding(
-                        padding: EdgeInsets.all(40.0),
+                        padding: EdgeInsets.all(20.0),
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: <Widget>[
                             Padding(
-                              padding: EdgeInsets.fromLTRB(100, 0, 10, 20),
+                              padding: EdgeInsets.fromLTRB(120, 0, 100, 20),
                               child: Text(
                                 'Discover',
                                 style: TextStyle(
@@ -117,23 +121,27 @@ class _StartingState extends State<Starting> {
                                 ),
                               ),
                             ),
-                            Text(
-                              '“Good furniture:where comfort\n meets style”',
-                              textAlign: TextAlign.center,
-                              style: TextStyle(
-                                fontSize: 20.0,
-                                fontWeight: FontWeight.bold,
-                                color: Colors.black,
+                            Padding(
+                              padding: EdgeInsets.fromLTRB(30, 0, 10, 20),
+                              child: Text(
+                                '“Good furniture:where comfort\n meets style”',
+                                textAlign: TextAlign.center,
+                                style: TextStyle(
+                                  fontSize: 20.0,
+                                  fontWeight: FontWeight.bold,
+                                  color: Colors.black,
+                                ),
                               ),
                             ),
                             SizedBox(
                               height: 20,
                             ),
-                            SizedBox(
+                            Expanded(
                               child: Image(
                                 image: AssetImage(
                                   'assets/images/mid.png',
                                 ),
+                                fit: BoxFit.cover,
                               ),
                             ),
                           ],
@@ -234,14 +242,14 @@ class _StartingState extends State<Starting> {
                                 Text(
                                   'Next',
                                   style: TextStyle(
-                                    color: Colors.white,
+                                    color: Colors.black,
                                     fontSize: 22.0,
                                   ),
                                 ),
                                 SizedBox(width: 10.0),
                                 Icon(
                                   Icons.arrow_forward,
-                                  color: Colors.white,
+                                  color: Colors.black,
                                   size: 30.0,
                                 ),
                               ],
