@@ -35,7 +35,7 @@ class _StartingState extends State<Starting> {
         duration: const Duration(milliseconds: 150),
         margin: const EdgeInsets.symmetric(horizontal: 8.0),
         height: 6.0,
-        width: isActive ? 24.0 : 16.0,
+        width: isActive ? 20.0 : 16.0,
         decoration: BoxDecoration(
           color: isActive
               ? const Color.fromARGB(255, 108, 107, 107)
@@ -103,9 +103,9 @@ class _StartingState extends State<Starting> {
                         _currentPage = page;
                       });
                     },
-                    children: const <Widget>[
+                    children: <Widget>[
                       // Page 1
-                      Padding(
+                      const Padding(
                         padding: EdgeInsets.all(20.0),
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
@@ -115,10 +115,10 @@ class _StartingState extends State<Starting> {
                               child: Text(
                                 'Discover',
                                 style: TextStyle(
-                                  fontSize: 24.0,
-                                  fontWeight: FontWeight.bold,
-                                  color: Colors.black,
-                                ),
+                                    fontSize: 24.0,
+                                    fontWeight: FontWeight.bold,
+                                    color: Colors.black,
+                                    fontFamily: 'Inter'),
                               ),
                             ),
                             Padding(
@@ -127,10 +127,10 @@ class _StartingState extends State<Starting> {
                                 '“Good furniture:where comfort\n meets style”',
                                 textAlign: TextAlign.center,
                                 style: TextStyle(
-                                  fontSize: 20.0,
-                                  fontWeight: FontWeight.bold,
-                                  color: Colors.black,
-                                ),
+                                    fontSize: 20.0,
+                                    fontWeight: FontWeight.bold,
+                                    color: Colors.black,
+                                    fontFamily: 'Inter'),
                               ),
                             ),
                             SizedBox(
@@ -148,73 +148,81 @@ class _StartingState extends State<Starting> {
                         ),
                       ),
                       // Page 2
-                      Padding(
-                        padding: EdgeInsets.all(40.0),
+                      const Padding(
+                        padding: EdgeInsets.all(0.0),
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: <Widget>[
-                            Center(
+                            Expanded(
                               child: Image(
                                 image: AssetImage(
-                                  'assets/images/logo.png',
+                                  'assets/images/mid2.png',
                                 ),
                                 height: 300.0,
-                                width: 300.0,
+                                width: 500.0,
                               ),
                             ),
                             SizedBox(height: 30.0),
-                            Text(
-                              'Live your life smarter\nwith us!',
-                              style: TextStyle(
-                                fontSize: 24.0,
-                                fontWeight: FontWeight.bold,
-                                color: Colors.white,
+                            Padding(
+                              padding: EdgeInsets.fromLTRB(140, 0, 100, 0),
+                              child: Text(
+                                'New Arrivals',
+                                style: TextStyle(
+                                    fontSize: 20.0,
+                                    fontWeight: FontWeight.bold,
+                                    color: Colors.black,
+                                    fontFamily: 'Inter'),
                               ),
                             ),
                             SizedBox(height: 15.0),
                             Text(
-                              'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+                              '"Unearthing splendid furniture adds charm  and comfort to our abode."',
+                              textAlign: TextAlign.center,
                               style: TextStyle(
-                                fontSize: 18.0,
-                                color: Colors.white,
-                              ),
+                                  fontSize: 18.0,
+                                  color: Colors.black,
+                                  fontFamily: 'Inter'),
                             ),
+                            SizedBox(
+                              height: 10,
+                            )
                           ],
                         ),
                       ),
                       // Page 3
+                      // Page 3 (Last Page)
                       Padding(
-                        padding: EdgeInsets.all(40.0),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: <Widget>[
-                            Center(
-                              child: Image(
-                                image: AssetImage(
-                                  'assets/images/logo.png',
+                        padding: const EdgeInsets.all(8.0),
+                        child: Container(
+                          decoration: const BoxDecoration(
+                            image: DecorationImage(
+                              image: AssetImage('assets/images/mid3.png'),
+                              fit: BoxFit.cover,
+                            ),
+                          ),
+                          child: const Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            children: [
+                              Text(
+                                'Get a new experience of imagination',
+                                style: TextStyle(
+                                  fontSize: 24.0,
+                                  fontWeight: FontWeight.bold,
+                                  color: Colors.white,
                                 ),
-                                height: 300.0,
-                                width: 300.0,
                               ),
-                            ),
-                            SizedBox(height: 30.0),
-                            Text(
-                              'Get a new experience\nof imagination',
-                              style: TextStyle(
-                                fontSize: 24.0,
-                                fontWeight: FontWeight.bold,
-                                color: Colors.white,
+                              SizedBox(height: 15.0),
+                              Text(
+                                'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+                                style: TextStyle(
+                                  fontSize: 18.0,
+                                  color: Colors.white,
+                                ),
+                                textAlign: TextAlign.center,
                               ),
-                            ),
-                            SizedBox(height: 15.0),
-                            Text(
-                              'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-                              style: TextStyle(
-                                fontSize: 18.0,
-                                color: Colors.white,
-                              ),
-                            ),
-                          ],
+                            ],
+                          ),
                         ),
                       ),
                     ],
