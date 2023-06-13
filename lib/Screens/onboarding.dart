@@ -14,20 +14,21 @@ class _OnBoardingState extends State<OnBoarding> {
     return Scaffold(
       body: Stack(
         children: <Widget>[
-          Image.asset(
-            'assets/images/onboard.png',
-            fit: BoxFit.fitHeight,
-            width: double.infinity,
+          SizedBox(
             height: double.infinity,
+            child: Image.asset(
+              'assets/images/onboard.png',
+              fit: BoxFit.fitHeight,
+            ),
           ),
           Positioned(
             top: 60,
-            left: 150,
+            left: 110,
             child: Image.asset('assets/images/logo.png'),
           ),
           Positioned(
             bottom: 120,
-            left: 90,
+            left: 60,
             child: SizedBox(
               width: 250,
               child: ElevatedButton(
@@ -41,7 +42,7 @@ class _OnBoardingState extends State<OnBoarding> {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (_) => const Login(),
+                      builder: (_) => Login(),
                     ),
                   );
                 },
@@ -50,7 +51,7 @@ class _OnBoardingState extends State<OnBoarding> {
                   child: Text(
                     'Log In',
                     style: TextStyle(
-                        fontSize: 30,
+                        fontSize: 20,
                         fontWeight: FontWeight.bold,
                         fontFamily: 'Inter'),
                   ),
@@ -60,7 +61,7 @@ class _OnBoardingState extends State<OnBoarding> {
           ),
           Positioned(
             bottom: 180,
-            left: 90,
+            left: 60,
             child: SizedBox(
               width: 250,
               child: ElevatedButton(
@@ -76,7 +77,7 @@ class _OnBoardingState extends State<OnBoarding> {
                   child: Text(
                     'Sign Up',
                     style: TextStyle(
-                        fontSize: 30,
+                        fontSize: 20,
                         fontWeight: FontWeight.bold,
                         color: Colors.black,
                         fontFamily: 'Inter'),

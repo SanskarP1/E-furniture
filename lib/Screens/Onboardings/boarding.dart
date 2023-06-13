@@ -32,7 +32,7 @@ class _StartingState extends State<Starting> {
         );
       },
       child: AnimatedContainer(
-        duration: const Duration(milliseconds: 150),
+        duration: const Duration(milliseconds: 100),
         margin: const EdgeInsets.symmetric(horizontal: 8.0),
         height: 6.0,
         width: isActive ? 20.0 : 16.0,
@@ -111,20 +111,20 @@ class _StartingState extends State<Starting> {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: <Widget>[
                             Padding(
-                              padding: EdgeInsets.fromLTRB(120, 0, 100, 20),
+                              padding: EdgeInsets.fromLTRB(100, 0, 100, 20),
                               child: Text(
                                 'Discover',
                                 style: TextStyle(
-                                    fontSize: 24.0,
+                                    fontSize: 25.0,
                                     fontWeight: FontWeight.bold,
                                     color: Colors.black,
                                     fontFamily: 'Inter'),
                               ),
                             ),
                             Padding(
-                              padding: EdgeInsets.fromLTRB(30, 0, 10, 20),
+                              padding: EdgeInsets.fromLTRB(10, 0, 10, 20),
                               child: Text(
-                                '“Good furniture:where comfort\n meets style”',
+                                '“Good furniture:\nwhere comfort meets style”',
                                 textAlign: TextAlign.center,
                                 style: TextStyle(
                                     fontSize: 20.0,

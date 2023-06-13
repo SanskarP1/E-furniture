@@ -3,7 +3,11 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:rohi_app/Screens/Onboardings/boarding.dart';
 
 void main(List<String> args) {
-  runApp(const Roohi());
+  runApp(
+    const ProviderScope(
+      child: Roohi(),
+    ),
+  );
 }
 
 class Roohi extends ConsumerWidget {
