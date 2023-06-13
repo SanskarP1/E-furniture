@@ -190,7 +190,6 @@ class StartingState extends State<Starting> {
                         ),
                       ),
                       // Page 3
-                      // Page 3 (Last Page)
                       Padding(
                         padding: const EdgeInsets.all(8.0),
                         child: Container(
