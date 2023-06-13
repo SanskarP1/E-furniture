@@ -1,25 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:hooks_riverpod/hooks_riverpod.dart';
 
-final obscurePasswordProvider =
-    StateNotifierProvider<PasswordVisibilityNotifier, bool>((ref) {
-  return PasswordVisibilityNotifier();
-});
+class Login extends StatefulWidget {
+  const Login({Key? key}) : super(key: key);
 
-class PasswordVisibilityNotifier extends StateNotifier<bool> {
-  PasswordVisibilityNotifier() : super(true);
-
-  void toggleVisibility() {
-    state = !state;
-  }
+  @override
+  LoginState createState() => LoginState();
 }
 
-class Login extends HookConsumerWidget {
-  Login({Key? key}) : super(key: key);
+class LoginState extends State<Login> {
   final formKey = GlobalKey<FormState>();
   final TextEditingController emailController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
+  bool obscurePassword = true;
+  bool rememberMe = false;
+
   bool validateEmail(String email) {
     const pattern = r'^[\w-]+(\.[\w-]+)*@([a-zA-Z0-9-]+\.)+[a-zA-Z]{2,7}$';
     final regex = RegExp(pattern);
@@ -28,15 +23,12 @@ class Login extends HookConsumerWidget {
   }
 
   @override
-  Widget build(BuildContext context, WidgetRef ref) {
-    final obscurePassword = ref.watch(obscurePasswordProvider);
+  Widget build(BuildContext context) {
     return Scaffold(
       body: SingleChildScrollView(
         child: Column(
           children: [
-            const SizedBox(
-              height: 100,
-            ),
+            const SizedBox(height: 100),
             const Row(
               children: [
                 Padding(
@@ -52,9 +44,7 @@ class Login extends HookConsumerWidget {
                 ),
               ],
             ),
-            const SizedBox(
-              height: 40,
-            ),
+            const SizedBox(height: 20),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 10),
               child: Form(
@@ -98,14 +88,14 @@ class Login extends HookConsumerWidget {
                           ),
                           suffixIcon: GestureDetector(
                             onTap: () {
-                              ref
-                                  .read(obscurePasswordProvider.notifier)
-                                  .toggleVisibility();
+                              setState(() {
+                                obscurePassword = !obscurePassword;
+                              });
                             },
                             child: Icon(
                               obscurePassword
-                                  ? FontAwesomeIcons.eyeSlash
-                                  : FontAwesomeIcons.eye,
+                                  ? FontAwesomeIcons.eye
+                                  : FontAwesomeIcons.eyeSlash,
                               color: Colors.grey,
                             ),
                           ),
@@ -118,11 +108,28 @@ class Login extends HookConsumerWidget {
                         },
                       ),
                     ),
+                    Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 20),
+                      child: Row(
+                        children: [
+                          Checkbox(
+                            value: rememberMe,
+                            onChanged: (newValue) {
+                              setState(() {
+                                rememberMe = newValue!;
+                              });
+                            },
+                          ),
+                          const Text('Remember Me'),
+                        ],
+                      ),
+                    ),
                     SizedBox(
                       width: 250,
                       child: ElevatedButton(
                         style: ElevatedButton.styleFrom(
-                            backgroundColor: Colors.black),
+                          backgroundColor: Colors.black,
+                        ),
                         onPressed: () {
                           if (formKey.currentState!.validate()) {
                             formKey.currentState!.reset();
@@ -135,29 +142,16 @@ class Login extends HookConsumerWidget {
                             );
                           }
                         },
-                        child: const Text(
-                          'Login',
-                          style: TextStyle(
-                            fontWeight: FontWeight.w600,
-                            fontSize: 20,
-                          ),
-                        ),
+                        child: const Text('Login'),
                       ),
                     ),
-                    const Padding(
-                      padding: EdgeInsets.symmetric(horizontal: 65),
-                      child: Row(
-                        children: [
-                          Text(
-                            'Forgot Your Password?',
-                            style: TextStyle(
-                              fontWeight: FontWeight.w600,
-                              fontSize: 15,
-                            ),
-                          ),
-                        ],
+                    const SizedBox(height: 10),
+                    const InkWell(
+                      child: Text(
+                        'Forgot Password?',
+                        style: TextStyle(fontSize: 15, fontFamily: 'Inter'),
                       ),
-                    )
+                    ),
                   ],
                 ),
               ),

@@ -6,10 +6,10 @@ class Starting extends StatefulWidget {
   const Starting({Key? key}) : super(key: key);
 
   @override
-  _StartingState createState() => _StartingState();
+  StartingState createState() => StartingState();
 }
 
-class _StartingState extends State<Starting> {
+class StartingState extends State<Starting> {
   final int _numPages = 3;
   final PageController _pageController = PageController(initialPage: 0);
   int _currentPage = 0;

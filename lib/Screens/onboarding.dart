@@ -42,7 +42,7 @@ class _OnBoardingState extends State<OnBoarding> {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (_) => Login(),
+                      builder: (_) => const Login(),
                     ),
                   );
                 },
