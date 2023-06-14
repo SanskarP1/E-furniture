@@ -197,13 +197,13 @@ class LoginState extends State<Login> {
                             children: [
                               Icon(
                                 FontAwesomeIcons.facebook,
-                                size: 30,
+                                size: 25,
                                 color: Colors.blue,
                               ),
                               Text(
                                 'Login with facebook',
                                 style: TextStyle(
-                                  fontSize: 20,
+                                  fontSize: 15,
                                   fontFamily: 'Inter',
                                 ),
                               )
@@ -231,13 +231,13 @@ class LoginState extends State<Login> {
                               children: [
                                 Icon(
                                   FontAwesomeIcons.google,
-                                  size: 30,
+                                  size: 25,
                                   color: Colors.red.shade500,
                                 ),
                                 const Text(
                                   'Login with Google',
                                   style: TextStyle(
-                                    fontSize: 20,
+                                    fontSize: 15,
                                     fontFamily: 'Inter',
                                   ),
                                 )

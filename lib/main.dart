@@ -21,3 +21,11 @@ class Roohi extends ConsumerWidget {
     );
   }
 }
+
+class MyCustomScrollBehavior extends MaterialScrollBehavior {
+  @override
+  Widget buildOverscrollIndicator(
+      BuildContext context, Widget child, ScrollableDetails details) {
+    return child;
+  }
+}
