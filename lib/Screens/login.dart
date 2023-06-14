@@ -144,6 +144,7 @@ class LoginState extends State<Login> {
                               ScaffoldMessenger.of(context).showSnackBar(
                                 const SnackBar(
                                   content: Text('Login successful!'),
+                                  duration: Duration(seconds: 2),
                                 ),
                               );
                               Navigator.push(

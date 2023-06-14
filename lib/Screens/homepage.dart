@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:rohi_app/Screens/Home/drawer.dart';
+import 'package:rohi_app/Screens/Home/image_slider.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -54,7 +55,7 @@ class _HomePageState extends State<HomePage> {
                 ),
                 Padding(
                   padding:
-                      const EdgeInsets.symmetric(horizontal: 25, vertical: 20),
+                      const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
@@ -75,14 +76,18 @@ class _HomePageState extends State<HomePage> {
                         ),
                       ),
                       Container(
-                          height: 40,
-                          width: 40,
-                          decoration: BoxDecoration(
-                              shape: BoxShape.circle, border: Border.all()),
-                          child: const Icon(Icons.shopping_cart))
+                        height: 40,
+                        width: 40,
+                        decoration: BoxDecoration(
+                          shape: BoxShape.circle,
+                          border: Border.all(),
+                        ),
+                        child: const Icon(Icons.shopping_cart),
+                      )
                     ],
                   ),
                 ),
+                const ImageSlider()
               ],
             ),
           ),
