@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 
 // Main page of the widget (Carousel)
@@ -20,10 +22,44 @@ class _ImageSliderState extends State<ImageSlider> {
     "https://images.pexels.com/photos/58997/pexels-photo-58997.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
   ];
 
+  Timer? _timer;
+  static const Duration _slideDuration = Duration(seconds: 2);
+
   @override
   void initState() {
     super.initState();
     _pageController = PageController(viewportFraction: 1, initialPage: 0);
+    _startAutoSlide();
+  }
+
+  void _startAutoSlide() {
+    _timer = Timer.periodic(_slideDuration, (_) {
+      final nextPage = (_pageController.page ?? 0) + 1;
+      if (nextPage < images.length) {
+        _pageController.animateToPage(
+          nextPage.toInt(),
+          duration: const Duration(milliseconds: 300),
+          curve: Curves.easeInOut,
+        );
+      } else {
+        _pageController.animateToPage(
+          0,
+          duration: const Duration(milliseconds: 300),
+          curve: Curves.easeInOut,
+        );
+      }
+    });
+  }
+
+  void _stopAutoSlide() {
+    _timer?.cancel();
+  }
+
+  @override
+  void dispose() {
+    _stopAutoSlide();
+    _pageController.dispose();
+    super.dispose();
   }
 
   @override

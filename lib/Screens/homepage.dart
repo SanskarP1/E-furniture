@@ -87,7 +87,11 @@ class _HomePageState extends State<HomePage> {
                     ],
                   ),
                 ),
-                const ImageSlider()
+                const Row(
+                  children: [
+                    ImageSlider(),
+                  ],
+                ),
               ],
             ),
           ),
