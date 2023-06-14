@@ -38,13 +38,13 @@ class _ImageSliderState extends State<ImageSlider> {
       if (nextPage < images.length) {
         _pageController.animateToPage(
           nextPage.toInt(),
-          duration: const Duration(milliseconds: 300),
+          duration: const Duration(milliseconds: 500),
           curve: Curves.easeInOut,
         );
       } else {
         _pageController.animateToPage(
           0,
-          duration: const Duration(milliseconds: 300),
+          duration: const Duration(milliseconds: 500),
           curve: Curves.easeInOut,
         );
       }

@@ -53,6 +53,8 @@ class _HomePageState extends State<HomePage> {
                     ],
                   ),
                 ),
+
+                // Search Bar Here!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
                 Padding(
                   padding:
                       const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
@@ -87,10 +89,48 @@ class _HomePageState extends State<HomePage> {
                     ],
                   ),
                 ),
+                // Image Slider Here !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
                 const Row(
                   children: [
                     ImageSlider(),
                   ],
+                ),
+                const Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 20, vertical: 5),
+                  child: Row(
+                    children: [
+                      Text(
+                        'Discover',
+                        style: TextStyle(
+                          color: Colors.black,
+                          fontSize: 20,
+                          fontWeight: FontWeight.bold,
+                          fontFamily: 'Inter',
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                Expanded(
+                  child: ListView.builder(
+                    shrinkWrap: true,
+                    scrollDirection: Axis.horizontal,
+                    itemCount: 15,
+                    itemBuilder: (context, index) {
+                      return InkWell(
+                        child: Padding(
+                          padding: const EdgeInsets.symmetric(horizontal: 10),
+                          child: Container(
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(20),
+                              color: Colors.amberAccent,
+                            ),
+                            child: Image.asset('assets/images/101.png'),
+                          ),
+                        ),
+                      );
+                    },
+                  ),
                 ),
               ],
             ),

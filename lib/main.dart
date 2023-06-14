@@ -15,9 +15,13 @@ class Roohi extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    return const MaterialApp(
+    return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: Starting(),
+      home: const Starting(),
+      builder: (context, child) {
+        return ScrollConfiguration(
+            behavior: MyCustomScrollBehavior(), child: child!);
+      },
     );
   }
 }
