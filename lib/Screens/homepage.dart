@@ -14,31 +14,65 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      key: _scaffoldKey,
-      body: SafeArea(
-        child: Stack(
-          children: [
-            Positioned(
-              top: 16,
-              left: 16,
-              child: GestureDetector(
-                onTap: () {
-                  _scaffoldKey.currentState?.openDrawer();
-                },
-                child: const CircleAvatar(
-                  backgroundColor: Colors.black,
-                  child: Icon(
-                    FontAwesomeIcons.bars,
-                    color: Colors.white,
+    return GestureDetector(
+      onTap: () {
+        FocusScope.of(context).unfocus();
+      },
+      child: Scaffold(
+        key: _scaffoldKey,
+        drawer: drawerPage(),
+        body: SafeArea(
+          child: GestureDetector(
+            onTap: () {
+              FocusScope.of(context).unfocus();
+            },
+            child: Column(
+              children: [
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 20),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      GestureDetector(
+                        onTap: () {
+                          _scaffoldKey.currentState?.openDrawer();
+                        },
+                        child: const CircleAvatar(
+                          backgroundColor: Colors.black,
+                          child: Icon(
+                            FontAwesomeIcons.bars,
+                            size: 20,
+                            color: Colors.white,
+                          ),
+                        ),
+                      ),
+                      Image.asset(
+                        'assets/images/101.png',
+                      )
+                    ],
                   ),
                 ),
-              ),
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 25),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: [
+                      Expanded(
+                        child: TextFormField(
+                          decoration: const InputDecoration(
+                            hintText: 'Search',
+                            prefixIcon: Icon(Icons.search),
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ],
             ),
-          ],
+          ),
         ),
       ),
-      drawer: drawerPage(),
     );
   }
 }
