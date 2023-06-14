@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:rohi_app/Screens/drawer.dart';
+import 'package:rohi_app/Screens/Home/drawer.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -53,18 +53,33 @@ class _HomePageState extends State<HomePage> {
                   ),
                 ),
                 Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 25),
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 25, vertical: 20),
                   child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Expanded(
+                      SizedBox(
+                        width: 250,
                         child: TextFormField(
-                          decoration: const InputDecoration(
+                          decoration: InputDecoration(
                             hintText: 'Search',
-                            prefixIcon: Icon(Icons.search),
+                            prefixIcon: const Icon(Icons.search),
+                            border: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(30),
+                              borderSide: const BorderSide(
+                                color: Colors.grey,
+                                width: 1.0,
+                              ),
+                            ),
                           ),
                         ),
                       ),
+                      Container(
+                          height: 40,
+                          width: 40,
+                          decoration: BoxDecoration(
+                              shape: BoxShape.circle, border: Border.all()),
+                          child: const Icon(Icons.shopping_cart))
                     ],
                   ),
                 ),
