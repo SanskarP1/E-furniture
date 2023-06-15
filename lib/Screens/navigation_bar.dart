@@ -42,6 +42,7 @@ class _NavigationPageState extends State<NavigationPage> {
         children: _pages,
       ),
       bottomNavigationBar: BottomNavigationBar(
+          fixedColor: Colors.black,
           selectedIconTheme: const IconThemeData(
             color: Colors.grey,
           ),
@@ -67,6 +68,10 @@ class _NavigationPageState extends State<NavigationPage> {
             ),
             BottomNavigationBarItem(
               icon: Icon(FontAwesomeIcons.person),
+              label: 'Account',
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(FontAwesomeIcons.cartShopping),
               label: 'Account',
             ),
           ]),

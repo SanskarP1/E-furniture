@@ -1,58 +1,60 @@
 import 'package:flutter/material.dart';
 
-class ImageGrid extends StatefulWidget {
-  const ImageGrid({super.key});
-
-  @override
-  State<ImageGrid> createState() => _ImageGridState();
+SizedBox imagegrid() {
+  return SizedBox(
+    height: 200,
+    child: ListView.builder(
+      scrollDirection: Axis.horizontal,
+      itemCount: 5,
+      shrinkWrap: true,
+      itemBuilder: (context, index) {
+        return InkWell(
+          onTap: () {},
+          child: Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Column(
+              children: [
+                Image.asset(
+                  'assets/images/101.png',
+                  height: 150,
+                  width: 150,
+                  fit: BoxFit.cover,
+                ),
+                const Text(
+                  'hello',
+                  style: TextStyle(
+                    fontSize: 16,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                const SizedBox(height: 10),
+              ],
+            ),
+          ),
+        );
+      },
+    ),
+  );
 }
 
-class _ImageGridState extends State<ImageGrid> {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      body: Column(
-        children: [
-          Expanded(
-              child: ListView.builder(
-            itemCount: 5,
-            scrollDirection: Axis.horizontal,
-            itemBuilder: (context, index) {
-              return Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Container(
-                  height: 100, // Set the desired height
-                  width: 200,
-                  // Set the desired width
-                  color: Colors.amber,
-                  // Replace YourChildWidget with your actual widget
-                ),
-              );
-            },
-          ))
-        ],
-      ),
-
-      // body: GridView.builder(
-      //   gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-      //     crossAxisCount: 4,
-      //     mainAxisSpacing: 15,
-      //     crossAxisSpacing: 15,
-      //     mainAxisExtent: 200,
-      //   ),
-      //   itemCount: 5,
-      //   shrinkWrap: true,
-      //   primary: false,
-      //   itemBuilder: (context, index) {
-      //     return InkWell(
-      //       child: Container(
-      //         color: Colors.amber,
-      //         height: 200,
-      //         width: 60,
-      //       ),
-      //     );
-      //   },
-      // ),
-    );
-  }
+SizedBox listimage() {
+  return SizedBox(
+    height: 200,
+    child: ListView.builder(
+      itemCount: 3,
+      itemBuilder: (context, index) {
+        return InkWell(
+          onTap: () {},
+          child: const Padding(
+            padding: EdgeInsets.all(8.0),
+            child: Column(
+              children: [
+                SizedBox(height: 10),
+              ],
+            ),
+          ),
+        );
+      },
+    ),
+  );
 }
