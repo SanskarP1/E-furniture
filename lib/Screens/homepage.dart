@@ -66,9 +66,23 @@ class _HomePageState extends State<HomePage> {
                             ),
                           ),
                         ),
+                        Image.asset(
+                          'assets/images/101.png',
+                        ),
+                      ],
+                    ),
+                  ),
+
+                  // Search Bar Here!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+                  Padding(
+                    padding:
+                        const EdgeInsets.symmetric(horizontal: 20, vertical: 0),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
                         SizedBox(
                           height: 50,
-                          width: 200,
+                          width: MediaQuery.of(context).size.width / 1.13,
                           child: TextFormField(
                             decoration: InputDecoration(
                               hintText: 'Search',
@@ -83,55 +97,20 @@ class _HomePageState extends State<HomePage> {
                             ),
                           ),
                         ),
-                        Image.asset(
-                          'assets/images/101.png',
-                        ),
+                        // Container(
+                        //   height: 40,
+                        //   width: 40,
+                        //   decoration: BoxDecoration(
+                        //     shape: BoxShape.circle,
+                        //     border: Border.all(),
+                        //   ),
+                        //   child: const Icon(Icons.shopping_cart),
+                        // ),
                       ],
                     ),
                   ),
-
-                  // Search Bar Here!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-                  // Padding(
-                  //   padding: const EdgeInsets.symmetric(
-                  //       horizontal: 20, vertical: 20),
-                  //   child: Row(
-                  //     mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  //     children: [
-                  //       SizedBox(
-                  //         height: 50,
-                  //         width: 260,
-                  //         child: TextFormField(
-                  //           decoration: InputDecoration(
-                  //             hintText: 'Search',
-                  //             prefixIcon: const Icon(Icons.search),
-                  //             border: OutlineInputBorder(
-                  //               borderRadius: BorderRadius.circular(30),
-                  //               borderSide: const BorderSide(
-                  //                 color: Colors.grey,
-                  //                 width: 1.0,
-                  //               ),
-                  //             ),
-                  //           ),
-                  //         ),
-                  //       ),
-                  //       // Container(
-                  //       //   height: 40,
-                  //       //   width: 40,
-                  //       //   decoration: BoxDecoration(
-                  //       //     shape: BoxShape.circle,
-                  //       //     border: Border.all(),
-                  //       //   ),
-                  //       //   child: const Icon(Icons.shopping_cart),
-                  //       // ),
-                  //     ],
-                  //   ),
-                  // ),
                   // Image Slider Here !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-                  const Row(
-                    children: [
-                      ImageSlider(),
-                    ],
-                  ),
+                  const ImageSlider(),
                   const Padding(
                     padding: EdgeInsets.symmetric(horizontal: 20, vertical: 5),
                     child: Row(

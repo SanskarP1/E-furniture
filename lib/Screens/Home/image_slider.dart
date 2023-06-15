@@ -67,7 +67,7 @@ class _ImageSliderState extends State<ImageSlider> {
     return Column(
       children: [
         Padding(
-          padding: const EdgeInsets.symmetric(vertical: 5),
+          padding: const EdgeInsets.symmetric(vertical: 5, horizontal: 10),
           child: SizedBox(
             width: MediaQuery.of(context).size.width,
             height: 250,
@@ -105,6 +105,7 @@ AnimatedContainer slider(images, pagePosition, active) {
     curve: Curves.easeInOutCubic,
     margin: EdgeInsets.all(margin),
     decoration: BoxDecoration(
+      borderRadius: BorderRadius.circular(10),
       image: DecorationImage(
         image: NetworkImage(
           images[pagePosition],
@@ -128,6 +129,9 @@ imageAnimation(PageController animation, images, pagePosition) {
       );
     },
     child: Container(
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(20),
+      ),
       margin: const EdgeInsets.all(10),
       child: Image.network(images[pagePosition]),
     ),
