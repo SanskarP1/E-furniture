@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:rohi_app/Screens/navigation_bar.dart';
 import 'package:rohi_app/Screens/onboarding.dart';
 
 class Starting extends StatefulWidget {
@@ -80,9 +81,11 @@ class StartingState extends State<Starting> {
                   child: InkWell(
                     onTap: () {
                       Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => const OnBoarding()));
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const NavigationPage(),
+                        ),
+                      );
                     },
                     child: const Text(
                       'Skip',

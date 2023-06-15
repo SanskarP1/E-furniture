@@ -6,4 +6,10 @@ class ProductModel {
     required this.image,
     required this.price,
   });
+
+  static List<ProductModel> imagelist() {
+    return [
+      ProductModel(image: '', price: 4),
+    ];
+  }
 }
