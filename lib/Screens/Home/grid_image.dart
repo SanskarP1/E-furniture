@@ -37,63 +37,129 @@ SizedBox imagegrid() {
   );
 }
 
-SizedBox listimage() {
+SizedBox listedimage() {
   return SizedBox(
     height: 200,
-    child: ListView.builder(
-      itemCount: 10,
-      shrinkWrap: true,
-      primary: false,
-      itemBuilder: (context, index) {
-        return InkWell(
-          onTap: () {},
-          child: Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Column(
-              children: [
-                const SizedBox(height: 10),
-                Container(
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+    child: SingleChildScrollView(
+      child: Column(
+        children: [
+          ListView.builder(
+            itemCount: 3,
+            shrinkWrap: true,
+            primary: false,
+            itemBuilder: (context, index) {
+              return InkWell(
+                onTap: () {},
+                child: Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Column(
                     children: [
-                      Column(
+                      const SizedBox(height: 10),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          Image.asset(
-                            'assets/images/mid.png',
-                            height: 150,
-                            width: 150,
-                            fit: BoxFit.cover,
+                          Column(
+                            children: [
+                              Image.asset(
+                                'assets/images/mid.png',
+                                height: 150,
+                                width: 150,
+                                fit: BoxFit.cover,
+                              ),
+                            ],
                           ),
-                        ],
-                      ),
-                      const Column(
-                        children: [
-                          Text('data'),
-                          Text('data'),
-                          Text('data'),
-                        ],
-                      ),
-                      Column(
-                        children: [
-                          ElevatedButton(
-                            onPressed: () {},
-                            child: const Text('data'),
+                          const Column(
+                            children: [
+                              Text('data'),
+                              Text('data'),
+                              Text('data'),
+                            ],
+                          ),
+                          Column(
+                            children: [
+                              ElevatedButton(
+                                onPressed: () {},
+                                child: const Text('data'),
+                              )
+                            ],
                           )
                         ],
-                      )
+                      ),
+                      const Divider(
+                        indent: 120,
+                        endIndent: 20,
+                        color: Colors.grey,
+                      ),
                     ],
                   ),
                 ),
-                const Divider(
-                  indent: 120,
-                  endIndent: 20,
-                  color: Colors.grey,
-                ),
-              ],
-            ),
+              );
+            },
           ),
-        );
-      },
+        ],
+      ),
     ),
   );
 }
+
+
+// SizedBox listimage() {
+//   return SizedBox(
+//     height: 200,
+//     child: ListView.builder(
+//       itemCount: 10,
+//       shrinkWrap: true,
+//       primary: false,
+//       itemBuilder: (context, index) {
+//         return SingleChildScrollView(
+//           child: InkWell(
+//             onTap: () {},
+//             child: Padding(
+//               padding: const EdgeInsets.all(8.0),
+//               child: Column(
+//                 children: [
+//                   const SizedBox(height: 10),
+//                   Row(
+//                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
+//                     children: [
+//                       Column(
+//                         children: [
+//                           Image.asset(
+//                             'assets/images/mid.png',
+//                             height: 150,
+//                             width: 150,
+//                             fit: BoxFit.cover,
+//                           ),
+//                         ],
+//                       ),
+//                       const Column(
+//                         children: [
+//                           Text('data'),
+//                           Text('data'),
+//                           Text('data'),
+//                         ],
+//                       ),
+//                       Column(
+//                         children: [
+//                           ElevatedButton(
+//                             onPressed: () {},
+//                             child: const Text('data'),
+//                           )
+//                         ],
+//                       )
+//                     ],
+//                   ),
+//                   const Divider(
+//                     indent: 120,
+//                     endIndent: 20,
+//                     color: Colors.grey,
+//                   ),
+//                 ],
+//               ),
+//             ),
+//           ),
+//         );
+//       },
+//     ),
+//   );
+// }

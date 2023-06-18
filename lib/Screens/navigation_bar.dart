@@ -4,6 +4,7 @@ import 'package:rohi_app/Screens/Account/account.dart';
 import 'package:rohi_app/Screens/Notification/notification.dart';
 import 'package:rohi_app/Screens/Wishlist/wishlist.dart';
 import 'package:rohi_app/Screens/Home/homepage.dart';
+import 'package:rohi_app/Screens/cart_page.dart';
 
 class NavigationPage extends StatefulWidget {
   const NavigationPage({super.key});
@@ -19,19 +20,14 @@ class _NavigationPageState extends State<NavigationPage> {
     HomePage(),
     Wishlist(),
     RohiNotify(),
-    Account()
+    Account(),
+    CartPage(),
   ];
 
   void _onItemTapped(int index) {
     setState(() {
       _selectedIndex = index;
     });
-    // Navigator.push(
-    //   context,
-    //   MaterialPageRoute(
-    //     builder: (context) => _pages[_selectedIndex],
-    //   ),
-    // );
   }
 
   @override
