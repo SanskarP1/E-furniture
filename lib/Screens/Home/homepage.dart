@@ -159,129 +159,231 @@ class _HomePageState extends State<HomePage> {
                         ],
                       ),
                     ),
-                    listedimage(),
-                    SizedBox(
-                      height: 150,
-                      width: MediaQuery.of(context).size.width / 0.2,
-                      child: ListView.builder(
-                          itemCount: 5,
-                          scrollDirection: Axis.horizontal,
-                          itemBuilder: (context, index) {
-                            return InkWell(
-                              child: Padding(
-                                padding:
-                                    const EdgeInsets.symmetric(horizontal: 10),
-                                child: Container(
-                                  decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(20),
-                                    boxShadow: const [
-                                      BoxShadow(
-                                        color:
-                                            Color.fromARGB(255, 235, 234, 234),
-                                        blurStyle: BlurStyle.solid,
+                  ],
+                ),
 
-                                        spreadRadius: 1.3, //extend the shadow
-                                        offset: Offset(
-                                          5.0,
-                                          5.0,
-                                        ),
-                                      )
-                                    ],
+                //vertical scrolllll!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+                listedimage(context),
+                //hirizontal Scroll!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+                listedimagelist(context),
+                Column(
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 20, vertical: 15),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          const Text(
+                            'Best Selling',
+                            style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                          RichText(
+                            text: const TextSpan(
+                              children: [
+                                TextSpan(
+                                    text: "Show All ",
+                                    style: TextStyle(
+                                      color: Colors.grey,
+                                      fontWeight: FontWeight.bold,
+                                    )),
+                                WidgetSpan(
+                                  child: Icon(
+                                    FontAwesomeIcons.caretRight,
+                                    color: Colors.grey,
+                                    size: 14,
                                   ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                    SizedBox(
+                      height: 200,
+                      child: SingleChildScrollView(
+                        child: Column(
+                          children: [
+                            ListView.builder(
+                              itemCount: 3,
+                              shrinkWrap: true,
+                              primary: false,
+                              itemBuilder: (context, index) {
+                                return InkWell(
+                                  onTap: () {},
                                   child: Padding(
-                                    padding:
-                                        const EdgeInsets.fromLTRB(15, 15, 0, 0),
-                                    child: Row(
+                                    padding: const EdgeInsets.all(8.0),
+                                    child: Column(
                                       children: [
-                                        Column(
-                                          crossAxisAlignment:
-                                              CrossAxisAlignment.start,
-                                          children: [
-                                            const Text(
-                                              'Collections',
-                                              style: TextStyle(
-                                                color: Colors.grey,
-                                                fontSize: 18,
-                                              ),
-                                            ),
-                                            const Text(
-                                              'New Arrivals',
-                                              style: TextStyle(
-                                                color: Colors.black,
-                                                fontSize: 22,
-                                              ),
-                                            ),
-                                            const Text(
-                                              'Summer',
-                                              style: TextStyle(
-                                                color: Colors.black,
-                                                fontSize: 22,
-                                              ),
-                                            ),
-                                            const SizedBox(
-                                              height: 30,
-                                            ),
-                                            InkWell(
-                                              onTap: () {},
-                                              // splashColor: Colors.black,
-                                              // highlightColor:
-                                              //     Colors.transparent,
-                                              // hoverColor:
-                                              //     Colors.transparent,
-                                              // focusColor:
-                                              //     Colors.transparent,
-                                              child: RichText(
-                                                text: const TextSpan(
-                                                  children: [
-                                                    TextSpan(
-                                                      text: "Show All ",
-                                                      style: TextStyle(
-                                                        color: Colors.black,
-                                                        fontWeight:
-                                                            FontWeight.bold,
-                                                      ),
-                                                    ),
-                                                    WidgetSpan(
-                                                      child: Padding(
-                                                        padding: EdgeInsets
-                                                            .symmetric(
-                                                          horizontal: 4.0,
-                                                        ),
-                                                        child: Icon(
-                                                          FontAwesomeIcons
-                                                              .caretRight,
-                                                          color: Colors.black,
-                                                          size: 14,
-                                                        ),
-                                                      ),
-                                                    ),
-                                                  ],
-                                                ),
-                                              ),
-                                            ),
-                                          ],
-                                        ),
-                                        Column(
+                                        const SizedBox(height: 10),
+                                        Row(
                                           mainAxisAlignment:
-                                              MainAxisAlignment.center,
+                                              MainAxisAlignment.spaceBetween,
                                           children: [
-                                            Image.asset(
-                                              'assets/images/mid.png',
-                                              height: 100,
-                                              width: 100,
+                                            Column(
+                                              children: [
+                                                Image.asset(
+                                                  'assets/images/mid.png',
+                                                  height: 150,
+                                                  width: 150,
+                                                  fit: BoxFit.cover,
+                                                ),
+                                              ],
+                                            ),
+                                            const Column(
+                                              children: [
+                                                Text('data'),
+                                                Text('data'),
+                                                Text('data'),
+                                              ],
+                                            ),
+                                            Column(
+                                              children: [
+                                                ElevatedButton(
+                                                  onPressed: () {},
+                                                  child: const Text('data'),
+                                                )
+                                              ],
                                             )
                                           ],
+                                        ),
+                                        const Divider(
+                                          indent: 120,
+                                          endIndent: 20,
+                                          color: Colors.grey,
                                         ),
                                       ],
                                     ),
                                   ),
-                                ),
-                              ),
-                            );
-                          }),
-                    )
+                                );
+                              },
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
                   ],
                 ),
+                SizedBox(
+                  height: 150,
+                  width: MediaQuery.of(context).size.width / 0.2,
+                  child: ListView.builder(
+                      itemCount: 5,
+                      scrollDirection: Axis.horizontal,
+                      itemBuilder: (context, index) {
+                        return InkWell(
+                          child: Padding(
+                            padding: const EdgeInsets.symmetric(horizontal: 10),
+                            child: Container(
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(20),
+                                boxShadow: const [
+                                  BoxShadow(
+                                    color: Color.fromARGB(255, 235, 234, 234),
+                                    blurStyle: BlurStyle.solid,
+
+                                    spreadRadius: 1.3, //extend the shadow
+                                    offset: Offset(
+                                      5.0,
+                                      5.0,
+                                    ),
+                                  )
+                                ],
+                              ),
+                              child: Padding(
+                                padding:
+                                    const EdgeInsets.fromLTRB(15, 15, 0, 0),
+                                child: Row(
+                                  children: [
+                                    Column(
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      children: [
+                                        const Text(
+                                          'Collections',
+                                          style: TextStyle(
+                                            color: Colors.grey,
+                                            fontSize: 18,
+                                          ),
+                                        ),
+                                        const Text(
+                                          'New Arrivals',
+                                          style: TextStyle(
+                                            color: Colors.black,
+                                            fontSize: 22,
+                                          ),
+                                        ),
+                                        const Text(
+                                          'Summer',
+                                          style: TextStyle(
+                                            color: Colors.black,
+                                            fontSize: 22,
+                                          ),
+                                        ),
+                                        const SizedBox(
+                                          height: 30,
+                                        ),
+                                        InkWell(
+                                          onTap: () {},
+                                          // splashColor: Colors.black,
+                                          // highlightColor:
+                                          //     Colors.transparent,
+                                          // hoverColor:
+                                          //     Colors.transparent,
+                                          // focusColor:
+                                          //     Colors.transparent,
+                                          child: RichText(
+                                            text: const TextSpan(
+                                              children: [
+                                                TextSpan(
+                                                  text: "Show All ",
+                                                  style: TextStyle(
+                                                    color: Colors.black,
+                                                    fontWeight: FontWeight.bold,
+                                                  ),
+                                                ),
+                                                WidgetSpan(
+                                                  child: Padding(
+                                                    padding:
+                                                        EdgeInsets.symmetric(
+                                                      horizontal: 4.0,
+                                                    ),
+                                                    child: Icon(
+                                                      FontAwesomeIcons
+                                                          .caretRight,
+                                                      color: Colors.black,
+                                                      size: 14,
+                                                    ),
+                                                  ),
+                                                ),
+                                              ],
+                                            ),
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                    Column(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.center,
+                                      children: [
+                                        Image.asset(
+                                          'assets/images/mid.png',
+                                          height: 100,
+                                          width: 100,
+                                        )
+                                      ],
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ),
+                          ),
+                        );
+                      }),
+                )
               ],
             ),
           ),
