@@ -15,7 +15,7 @@ SizedBox imagegrid() {
             child: Column(
               children: [
                 Image.asset(
-                  'assets/images/101.png',
+                  'assets/images/mid.png',
                   height: 150,
                   width: 150,
                   fit: BoxFit.cover,
@@ -41,15 +41,54 @@ SizedBox listimage() {
   return SizedBox(
     height: 200,
     child: ListView.builder(
-      itemCount: 3,
+      itemCount: 10,
+      shrinkWrap: true,
+      primary: false,
       itemBuilder: (context, index) {
         return InkWell(
           onTap: () {},
-          child: const Padding(
-            padding: EdgeInsets.all(8.0),
+          child: Padding(
+            padding: const EdgeInsets.all(8.0),
             child: Column(
               children: [
-                SizedBox(height: 10),
+                const SizedBox(height: 10),
+                Container(
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Column(
+                        children: [
+                          Image.asset(
+                            'assets/images/mid.png',
+                            height: 150,
+                            width: 150,
+                            fit: BoxFit.cover,
+                          ),
+                        ],
+                      ),
+                      const Column(
+                        children: [
+                          Text('data'),
+                          Text('data'),
+                          Text('data'),
+                        ],
+                      ),
+                      Column(
+                        children: [
+                          ElevatedButton(
+                            onPressed: () {},
+                            child: const Text('data'),
+                          )
+                        ],
+                      )
+                    ],
+                  ),
+                ),
+                const Divider(
+                  indent: 120,
+                  endIndent: 20,
+                  color: Colors.grey,
+                ),
               ],
             ),
           ),

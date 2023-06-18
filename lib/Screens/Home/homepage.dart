@@ -14,21 +14,21 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
 
-  List<String> images = [
-    'assets/images/image1.png',
-    'assets/images/image2.png',
-    'assets/images/image3.png',
-    'assets/images/image4.png',
-    'assets/images/image5.png',
-  ];
+  // List<String> images = [
+  //   'assets/images/image1.png',
+  //   'assets/images/image2.png',
+  //   'assets/images/image3.png',
+  //   'assets/images/image4.png',
+  //   'assets/images/image5.png',
+  // ];
 
-  List<String> titles = [
-    'Title 1',
-    'Title 2',
-    'Title 3',
-    'Title 4',
-    'Title 5',
-  ];
+  // List<String> titles = [
+  //   'Title 1',
+  //   'Title 2',
+  //   'Title 3',
+  //   'Title 4',
+  //   'Title 5',
+  // ];
 
   @override
   Widget build(BuildContext context) {
@@ -163,7 +163,11 @@ class _HomePageState extends State<HomePage> {
                           ],
                         ),
                       ),
-                      listimage(),
+                      Column(
+                        children: [
+                          listimage(),
+                        ],
+                      ),
                     ],
                   ),
                 ],

@@ -3,7 +3,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:rohi_app/Screens/Account/account.dart';
 import 'package:rohi_app/Screens/Notification/notification.dart';
 import 'package:rohi_app/Screens/Wishlist/wishlist.dart';
-import 'package:rohi_app/Screens/homepage.dart';
+import 'package:rohi_app/Screens/Home/homepage.dart';
 
 class NavigationPage extends StatefulWidget {
   const NavigationPage({super.key});
