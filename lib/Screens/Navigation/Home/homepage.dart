@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:rohi_app/Screens/Home/bestselling.dart';
-import 'package:rohi_app/Screens/Home/collections.dart';
-import 'package:rohi_app/Screens/Home/discover.dart';
-import 'package:rohi_app/Screens/Home/drawer.dart';
-import 'package:rohi_app/Screens/Home/image_slider.dart';
-import 'package:rohi_app/Screens/Home/offers.dart';
-import 'package:rohi_app/Screens/Home/page_top.dart';
-import 'package:rohi_app/Screens/Home/search.dart';
-import 'package:rohi_app/Screens/Home/trending.dart';
+import 'package:rohi_app/Screens/Navigation/Home/bestselling.dart';
+import 'package:rohi_app/Screens/Navigation/Home/collections.dart';
+import 'package:rohi_app/Screens/Navigation/Home/discover.dart';
+import 'package:rohi_app/Screens/Navigation/Home/drawer.dart';
+import 'package:rohi_app/Screens/Navigation/Home/image_slider.dart';
+import 'package:rohi_app/Screens/Navigation/Home/offers.dart';
+import 'package:rohi_app/Screens/Navigation/Home/page_top.dart';
+import 'package:rohi_app/Screens/Navigation/Home/search.dart';
+import 'package:rohi_app/Screens/Navigation/Home/trending.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);

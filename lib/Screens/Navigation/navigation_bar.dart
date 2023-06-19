@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:rohi_app/Screens/Account/account.dart';
-import 'package:rohi_app/Screens/Notification/notification.dart';
-import 'package:rohi_app/Screens/Wishlist/wishlist.dart';
-import 'package:rohi_app/Screens/Home/homepage.dart';
-import 'package:rohi_app/Screens/cart_page.dart';
+import 'package:rohi_app/Screens/Navigation/Account/account.dart';
+import 'package:rohi_app/Screens/Navigation/Notification/notification.dart';
+import 'package:rohi_app/Screens/Navigation/Wishlist/wishlist.dart';
+import 'package:rohi_app/Screens/Navigation/Home/homepage.dart';
+import 'package:rohi_app/Screens/Navigation/cart_page.dart';
 
 class NavigationPage extends StatefulWidget {
   const NavigationPage({super.key});
