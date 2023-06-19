@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
-SizedBox imagegrid() {
+SizedBox discover() {
   return SizedBox(
     height: 200,
     child: ListView.builder(
@@ -10,6 +10,10 @@ SizedBox imagegrid() {
       shrinkWrap: true,
       itemBuilder: (context, index) {
         return InkWell(
+          splashColor: Colors.transparent,
+          highlightColor: Colors.transparent,
+          hoverColor: Colors.transparent,
+          focusColor: Colors.transparent,
           onTap: () {},
           child: Padding(
             padding: const EdgeInsets.all(8.0),
@@ -38,72 +42,7 @@ SizedBox imagegrid() {
   );
 }
 
-SizedBox listedimage(context) {
-  return SizedBox(
-    height: 200,
-    child: SingleChildScrollView(
-      child: Column(
-        children: [
-          ListView.builder(
-            itemCount: 3,
-            shrinkWrap: true,
-            primary: false,
-            itemBuilder: (context, index) {
-              return InkWell(
-                onTap: () {},
-                child: Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Column(
-                    children: [
-                      const SizedBox(height: 10),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Column(
-                            children: [
-                              Image.asset(
-                                'assets/images/mid.png',
-                                height: 150,
-                                width: 150,
-                                fit: BoxFit.cover,
-                              ),
-                            ],
-                          ),
-                          const Column(
-                            children: [
-                              Text('data'),
-                              Text('data'),
-                              Text('data'),
-                            ],
-                          ),
-                          Column(
-                            children: [
-                              ElevatedButton(
-                                onPressed: () {},
-                                child: const Text('data'),
-                              )
-                            ],
-                          )
-                        ],
-                      ),
-                      const Divider(
-                        indent: 120,
-                        endIndent: 20,
-                        color: Colors.grey,
-                      ),
-                    ],
-                  ),
-                ),
-              );
-            },
-          ),
-        ],
-      ),
-    ),
-  );
-}
-
-SizedBox listedimagelist(BuildContext context) {
+SizedBox trendingimagelist(BuildContext context) {
   return SizedBox(
     height: 150,
     width: MediaQuery.of(context).size.width / 0.2,
@@ -163,13 +102,10 @@ SizedBox listedimagelist(BuildContext context) {
                           ),
                           InkWell(
                             onTap: () {},
-                            // splashColor: Colors.black,
-                            // highlightColor:
-                            //     Colors.transparent,
-                            // hoverColor:
-                            //     Colors.transparent,
-                            // focusColor:
-                            //     Colors.transparent,
+                            splashColor: Colors.transparent,
+                            highlightColor: Colors.transparent,
+                            hoverColor: Colors.transparent,
+                            focusColor: Colors.transparent,
                             child: RichText(
                               text: const TextSpan(
                                 children: [
