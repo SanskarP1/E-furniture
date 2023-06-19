@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:rohi_app/Utilities/discription.dart';
 
 class Discover extends StatelessWidget {
   const Discover({
@@ -36,7 +37,14 @@ class Discover extends StatelessWidget {
                   highlightColor: Colors.transparent,
                   hoverColor: Colors.transparent,
                   focusColor: Colors.transparent,
-                  onTap: () {},
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const DescriptionPage(),
+                      ),
+                    );
+                  },
                   child: Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: Column(

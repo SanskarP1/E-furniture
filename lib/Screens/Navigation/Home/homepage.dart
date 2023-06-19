@@ -34,6 +34,9 @@ class _HomePageState extends State<HomePage> {
               children: [
                 PageTop(scaffoldKey: _scaffoldKey),
                 const SearchBarTop(),
+                const SizedBox(
+                  height: 20,
+                ),
                 const ImageSlider(),
                 const Discover(),
                 const TrendingPage(),

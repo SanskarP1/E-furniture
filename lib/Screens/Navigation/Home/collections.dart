@@ -31,7 +31,7 @@ class Collections extends StatelessWidget {
                           5.0,
                           5.0,
                         ),
-                      )
+                      ),
                     ],
                   ),
                   child: Padding(
