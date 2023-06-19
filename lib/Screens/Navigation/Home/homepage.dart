@@ -39,7 +39,10 @@ class _HomePageState extends State<HomePage> {
                 const TrendingPage(),
                 const Collections(),
                 const BestSelling(),
-                const Offres()
+                const Offres(),
+                const SizedBox(
+                  height: 15,
+                )
               ],
             ),
           ),

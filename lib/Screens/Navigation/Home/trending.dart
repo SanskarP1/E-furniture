@@ -48,7 +48,7 @@ class TrendingPage extends StatelessWidget {
             child: Column(
               children: [
                 ListView.builder(
-                  itemCount: 1,
+                  itemCount: 3,
                   shrinkWrap: true,
                   physics: const NeverScrollableScrollPhysics(),
                   itemBuilder: (context, index) {

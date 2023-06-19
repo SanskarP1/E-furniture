@@ -1,15 +1,22 @@
 class ProductModel {
-  String image;
   int price;
+  final List<String> images;
 
   ProductModel({
-    required this.image,
+    required this.images,
     required this.price,
   });
 
-  static List<ProductModel> imagelist() {
+  static List<ProductModel> trendinglist() {
     return [
-      ProductModel(image: '', price: 4),
+      ProductModel(
+        images: [
+          'assets/images/mid.png',
+          'assets/images/mid.png',
+          'assets/images/mid.png'
+        ],
+        price: 4000,
+      ),
     ];
   }
 }
