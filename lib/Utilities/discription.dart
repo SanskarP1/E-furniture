@@ -278,13 +278,14 @@ class DescriptionPageState extends State<DescriptionPage> {
                 height: 60,
                 width: double.infinity,
                 child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     InkWell(
                       child: Container(
                         height: 60,
                         width: 80,
                         decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(20),
+                            borderRadius: BorderRadius.circular(15),
                             color: Colors.black),
                         child: const Icon(
                           FontAwesomeIcons.solidHeart,
@@ -296,13 +297,18 @@ class DescriptionPageState extends State<DescriptionPage> {
                     InkWell(
                       child: Container(
                           height: 60,
-                          width: 180,
+                          width: 200,
                           decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(20),
+                              borderRadius: BorderRadius.circular(15),
                               color: Colors.black),
-                          child: const Text(
-                            'Add to Cart',
-                            style: TextStyle(color: Colors.white),
+                          child: const Padding(
+                            padding: EdgeInsets.symmetric(
+                                vertical: 20, horizontal: 40),
+                            child: Text(
+                              'Add to Cart',
+                              style:
+                                  TextStyle(color: Colors.white, fontSize: 18),
+                            ),
                           )),
                     ),
                   ],
