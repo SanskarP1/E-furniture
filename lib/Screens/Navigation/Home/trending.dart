@@ -1,11 +1,28 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:rohi_app/Models/model.dart';
 
 class TrendingPage extends StatelessWidget {
-  const TrendingPage({
-    super.key,
-  });
+  List<ProductModel> trendinglist = [
+    ProductModel(
+      images: [
+        'assets/images/mid2.png',
+        // 'assets/images/mid.png',
+        // 'assets/images/mid.png'
+      ],
+      price: 4000,
+    ),
+    ProductModel(
+      images: [
+        'assets/images/mid.png',
+        // 'assets/images/mid.png',
+        // 'assets/images/mid.png'
+      ],
+      price: 343,
+    ),
+  ];
 
+  TrendingPage({super.key});
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -48,7 +65,7 @@ class TrendingPage extends StatelessWidget {
             child: Column(
               children: [
                 ListView.builder(
-                  itemCount: 3,
+                  itemCount: trendinglist.length,
                   shrinkWrap: true,
                   physics: const NeverScrollableScrollPhysics(),
                   itemBuilder: (context, index) {
@@ -69,7 +86,7 @@ class TrendingPage extends StatelessWidget {
                                 Column(
                                   children: [
                                     Image.asset(
-                                      'assets/images/mid.png',
+                                      trendinglist[index].images[0],
                                       height: 150,
                                       width: 150,
                                       fit: BoxFit.cover,

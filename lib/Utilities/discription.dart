@@ -55,6 +55,10 @@ class DescriptionPageState extends State<DescriptionPage> {
                         ),
                         color: Color.fromARGB(255, 209, 211, 212),
                       ),
+                      child: Image.asset(
+                        'assets/images/mid2.png',
+                        fit: BoxFit.cover,
+                      ),
                     ),
                   ),
                   Positioned(
