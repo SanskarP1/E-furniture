@@ -99,7 +99,7 @@ class _AccountState extends State<Account> {
               ],
             ),
             Container(
-              decoration: BoxDecoration(),
+              decoration: const BoxDecoration(),
             )
           ],
         ),

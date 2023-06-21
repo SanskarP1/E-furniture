@@ -3,20 +3,16 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:rohi_app/Models/model.dart';
 
 class TrendingPage extends StatelessWidget {
-  List<ProductModel> trendinglist = [
+ final List<ProductModel> trendinglist = [
     ProductModel(
       images: [
         'assets/images/mid2.png',
-        // 'assets/images/mid.png',
-        // 'assets/images/mid.png'
       ],
       price: 4000,
     ),
     ProductModel(
       images: [
         'assets/images/mid.png',
-        // 'assets/images/mid.png',
-        // 'assets/images/mid.png'
       ],
       price: 343,
     ),

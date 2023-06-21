@@ -3,7 +3,7 @@ import 'package:rohi_app/Models/model.dart';
 import 'package:rohi_app/Utilities/discription.dart';
 
 class Discover extends StatelessWidget {
-  List<ProductModel> trendinglist = [
+ final List<ProductModel> trendinglist = [
     ProductModel(
       images: [
         'assets/images/mid2.png',
