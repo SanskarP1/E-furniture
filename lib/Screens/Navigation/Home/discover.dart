@@ -1,11 +1,28 @@
 import 'package:flutter/material.dart';
+import 'package:rohi_app/Models/model.dart';
 import 'package:rohi_app/Utilities/discription.dart';
 
 class Discover extends StatelessWidget {
-  const Discover({
-    super.key,
-  });
+  List<ProductModel> trendinglist = [
+    ProductModel(
+      images: [
+        'assets/images/mid2.png',
+        // 'assets/images/mid.png',
+        // 'assets/images/mid.png'
+      ],
+      price: 4000,
+    ),
+    ProductModel(
+      images: [
+        'assets/images/mid.png',
+        // 'assets/images/mid.png',
+        // 'assets/images/mid.png'
+      ],
+      price: 343,
+    ),
+  ];
 
+  Discover({super.key});
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -29,7 +46,7 @@ class Discover extends StatelessWidget {
             height: 200,
             child: ListView.builder(
               scrollDirection: Axis.horizontal,
-              itemCount: 5,
+              itemCount: trendinglist.length,
               shrinkWrap: true,
               itemBuilder: (context, index) {
                 return InkWell(
@@ -50,7 +67,7 @@ class Discover extends StatelessWidget {
                     child: Column(
                       children: [
                         Image.asset(
-                          'assets/images/mid.png',
+                          trendinglist[index].images[0],
                           height: 150,
                           width: 150,
                           fit: BoxFit.cover,
