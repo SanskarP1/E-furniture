@@ -9,24 +9,24 @@ class Offres extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 150,
-      width: MediaQuery.of(context).size.width / 0.2,
+      height: 160,
+      width: MediaQuery.of(context).size.width / 0.1,
       child: ListView.builder(
           itemCount: 5,
           scrollDirection: Axis.horizontal,
           itemBuilder: (context, index) {
             return InkWell(
               child: Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 10),
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 10, vertical: 2),
                 child: Container(
                   decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(20),
+                    borderRadius: BorderRadius.circular(15),
                     boxShadow: const [
                       BoxShadow(
                         color: Color.fromARGB(255, 235, 234, 234),
                         blurStyle: BlurStyle.solid,
-
-                        spreadRadius: 1.3, //extend the shadow
+                        spreadRadius: 5, //extend the shadow
                         offset: Offset(
                           5.0,
                           5.0,
@@ -63,17 +63,14 @@ class Offres extends StatelessWidget {
                               ),
                             ),
                             const SizedBox(
-                              height: 30,
+                              height: 35,
                             ),
                             InkWell(
                               onTap: () {},
-                              // splashColor: Colors.black,
-                              // highlightColor:
-                              //     Colors.transparent,
-                              // hoverColor:
-                              //     Colors.transparent,
-                              // focusColor:
-                              //     Colors.transparent,
+                              splashColor: Colors.transparent,
+                              highlightColor: Colors.transparent,
+                              hoverColor: Colors.transparent,
+                              focusColor: Colors.transparent,
                               child: RichText(
                                 text: const TextSpan(
                                   children: [

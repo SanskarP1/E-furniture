@@ -298,23 +298,7 @@ class DescriptionPageState extends State<DescriptionPage> {
                         ),
                       ),
                     ),
-                    InkWell(
-                      child: Container(
-                          height: 60,
-                          width: 200,
-                          decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(15),
-                              color: Colors.black),
-                          child: const Padding(
-                            padding: EdgeInsets.symmetric(
-                                vertical: 20, horizontal: 40),
-                            child: Text(
-                              'Add to Cart',
-                              style:
-                                  TextStyle(color: Colors.white, fontSize: 18),
-                            ),
-                          )),
-                    ),
+                    _addtocart(),
                   ],
                 ),
               ),
@@ -322,6 +306,23 @@ class DescriptionPageState extends State<DescriptionPage> {
           ],
         ),
       ),
+    );
+  }
+
+  InkWell _addtocart() {
+    return InkWell(
+      child: Container(
+          height: 60,
+          width: 200,
+          decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(15), color: Colors.black),
+          child: const Padding(
+            padding: EdgeInsets.symmetric(vertical: 20, horizontal: 40),
+            child: Text(
+              'Add to Cart',
+              style: TextStyle(color: Colors.white, fontSize: 18),
+            ),
+          )),
     );
   }
 

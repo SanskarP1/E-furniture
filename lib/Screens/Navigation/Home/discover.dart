@@ -3,23 +3,12 @@ import 'package:rohi_app/Models/model.dart';
 import 'package:rohi_app/Utilities/discription.dart';
 
 class Discover extends StatelessWidget {
- final List<ProductModel> trendinglist = [
-    ProductModel(
-      images: [
-        'assets/images/mid2.png',
-        // 'assets/images/mid.png',
-        // 'assets/images/mid.png'
-      ],
-      price: 4000,
-    ),
-    ProductModel(
-      images: [
-        'assets/images/mid.png',
-        // 'assets/images/mid.png',
-        // 'assets/images/mid.png'
-      ],
-      price: 343,
-    ),
+  final List<ProductModel> discover = [
+    ProductModel(images: 'assets/images/mid2.png', price: 4000),
+    ProductModel(images: 'assets/images/mid.png', price: 343),
+    ProductModel(images: 'assets/images/mid.png', price: 100),
+    ProductModel(images: 'assets/images/mid2.png', price: 200),
+    ProductModel(images: 'assets/images/mid3.png', price: 300),
   ];
 
   Discover({super.key});
@@ -46,7 +35,7 @@ class Discover extends StatelessWidget {
             height: 200,
             child: ListView.builder(
               scrollDirection: Axis.horizontal,
-              itemCount: trendinglist.length,
+              itemCount: discover.length,
               shrinkWrap: true,
               itemBuilder: (context, index) {
                 return InkWell(
@@ -67,14 +56,14 @@ class Discover extends StatelessWidget {
                     child: Column(
                       children: [
                         Image.asset(
-                          trendinglist[index].images[0],
+                          discover[index].images,
                           height: 150,
                           width: 150,
                           fit: BoxFit.cover,
                         ),
-                        const Text(
-                          'hello',
-                          style: TextStyle(
+                        Text(
+                          discover[index].price.toString(),
+                          style: const TextStyle(
                             fontSize: 16,
                             fontWeight: FontWeight.bold,
                           ),
